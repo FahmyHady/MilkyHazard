@@ -10,7 +10,7 @@ public class ParticleTrigger : MonoBehaviour
     int count;
     static int collidersCounter;
     GameObject savedObject;
-   // FireComponent savedFireComponenet;
+    FireComponent savedFireComponenet;
     private void Awake()
     {
         mainParticle = GetComponent<ParticleSystem>();
@@ -32,7 +32,7 @@ public class ParticleTrigger : MonoBehaviour
             if (tempObject != savedObject)
             {
                 savedObject = tempObject;
-             //   savedFireComponenet = savedObject.GetComponent<FireComponent>();
+                savedFireComponenet = savedObject.GetComponent<FireComponent>();
                 savedFireComponenet?.hit();
             }
             else
