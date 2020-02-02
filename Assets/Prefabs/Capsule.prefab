@@ -217,6 +217,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootJetParticle
       objectReference: {fileID: 0}
+    - target: {fileID: 8061670297345551695, guid: 0b782595f4861144ca00ed12f47b2603,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8061670297345551693, guid: 0b782595f4861144ca00ed12f47b2603,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -277,11 +282,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 8061670297345551694, guid: 0b782595f4861144ca00ed12f47b2603,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b782595f4861144ca00ed12f47b2603, type: 3}
 --- !u!4 &251306637174380513 stripped

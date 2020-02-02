@@ -32,11 +32,34 @@ public class FireComponent : MonoBehaviour
             fireHealth -= Time.deltaTime * fireDieFactor;
             fireLifeTimer -= Time.deltaTime;
             if (fireLifeTimer < 0) wet = false;
-            
+            if (!SmokeEffect.isEmitting)
+            SmokeEffect.Play();
         }
         else
         {
             SmokeEffect.Stop();
+        }
+
+        if (fireHealth > 70)
+        {
+            
+        }
+
+        else if (fireHealth > 20)
+        {
+            ParticleSystem.EmissionModule emissionModule =fireEffect.emission;
+            emissionModule.rateOverTime = 20;
+        }
+        else if (fireHealth > 1)
+        {
+            ParticleSystem.EmissionModule emissionModule = fireEffect.emission;
+            emissionModule.rateOverTime = 5;
+
+        }
+        else if (fireHealth < 0)
+        {
+            fireEffect.Stop();
+            
         }
 
     }

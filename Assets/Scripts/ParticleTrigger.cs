@@ -4,24 +4,16 @@ using UnityEngine;
 using UnityEngine.Events;
 public class ParticleTrigger : MonoBehaviour
 {
-    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
     List<ParticleCollisionEvent> enter2 = new List<ParticleCollisionEvent>();
     static ParticleSystem mainParticle;
     int count;
-    static int collidersCounter;
     GameObject savedObject;
-   // FireComponent savedFireComponenet;
+    FireComponent savedFireComponenet;
     private void Awake()
     {
         mainParticle = GetComponent<ParticleSystem>();
     }
-    public static void AddToTriggers(Collider colliderToAdd)
-    {
-
-
-        mainParticle.trigger.SetCollider(collidersCounter, colliderToAdd);
-        collidersCounter++;
-    }
+  
     private void OnParticleCollision(GameObject other)
     {
         count = ParticlePhysicsExtensions.GetCollisionEvents(mainParticle, other, enter2);
@@ -32,11 +24,14 @@ public class ParticleTrigger : MonoBehaviour
             if (tempObject != savedObject)
             {
                 savedObject = tempObject;
-             //   savedFireComponenet = savedObject.GetComponent<FireComponent>();
+                Debug.Log(savedObject.name);
+                savedFireComponenet = savedObject.GetComponent<FireComponent>();
                 savedFireComponenet?.hit();
             }
             else
             {
+                print(savedFireComponenet);
+
                 savedFireComponenet?.hit();
 
             }
