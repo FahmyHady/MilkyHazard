@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 251306638289682561}
   - component: {fileID: 251306638289682560}
   - component: {fileID: 251306638289682566}
-  - component: {fileID: 251306638289682623}
   - component: {fileID: 251306638289682563}
   m_Layer: 0
   m_Name: Capsule
@@ -96,23 +95,9 @@ MonoBehaviour:
   shootButton: 323
   myShootJet: {fileID: 251306637174380515}
   shootRate: 1
-  maxShootTime: 5
+  maxShootTime: 10
   fillImage: {fileID: 0}
   coolDownRate: 1
---- !u!136 &251306638289682623
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251306638289682622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &251306638289682563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,10 +261,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8061670297345551694, guid: 0b782595f4861144ca00ed12f47b2603,
         type: 3}
       propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061670297345551695, guid: 0b782595f4861144ca00ed12f47b2603,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061670297345551695, guid: 0b782595f4861144ca00ed12f47b2603,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

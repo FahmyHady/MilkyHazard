@@ -17,8 +17,6 @@ public class ParticleTrigger : MonoBehaviour
     }
     public static void AddToTriggers(Collider colliderToAdd)
     {
-
-
         mainParticle.trigger.SetCollider(collidersCounter, colliderToAdd);
         collidersCounter++;
     }

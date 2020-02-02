@@ -9,7 +9,7 @@ public class GameStarted : UnityEvent<GameStates>
 public class GameManager : MonoBehaviour
 {
     [SerializeField] ActiveOnlyDuringState[] UIStates;
-    public GameStarted GameStarted;
+    public GameStarted GameStartedEvent=new GameStarted();
     static GameManager instance;
     private GameStates currentState;
     public static GameManager Instance
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         set
         {
             currentState = value;
-            GameStarted.Invoke(currentState);
+            GameStartedEvent.Invoke(currentState);
         }
     }
     private void Awake()
@@ -41,13 +41,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < UIStates.Length; i++)
         {
-            GameStarted.AddListener(UIStates[i].CheckState);
+            GameStartedEvent.AddListener(UIStates[i].CheckState);
         }
-        currentState = GameStates.MainMenu;
+        CurrentState = GameStates.MainMenu;
     }
     public void StartTheGame()
     {
-        currentState = GameStates.Gameplay;
+        CurrentState = GameStates.Gameplay;
     }
     public void RestartTheGame()
     {
@@ -55,7 +55,11 @@ public class GameManager : MonoBehaviour
     }
     public void CreditsScreen()
     {
-        currentState = GameStates.Credits;
+        CurrentState = GameStates.Credits;
+    }
+    public void MainMenuScreen()
+    {
+        CurrentState = GameStates.MainMenu;
     }
     public void QuitGame()
     {

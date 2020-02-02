@@ -16,6 +16,6 @@ public class TurrentControl : MonoBehaviour
     {
         mousePos = Input.mousePosition;
         mousePos = myCamera.ScreenToViewportPoint(mousePos);
-        transform.eulerAngles = new Vector3((vAngleLimit / 0.5f) * ( 0.5f-mousePos.y), (hAngleLimit/0.5f)*(mousePos.x-0.5f), 0);
+        transform.localEulerAngles = new Vector3((vAngleLimit / 0.5f) * ( 0.5f-mousePos.y), (hAngleLimit/0.5f)*(mousePos.x-0.5f), 0);
     }
 }

@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(shootButton) && shootTime < maxShootTime)
+        if (Input.GetKey(shootButton) && shootTime < maxShootTime && GameManager.Instance.CurrentState == GameStates.Gameplay)
         {
             shooting = true;
             myShootJet.Emit(shootRate);
